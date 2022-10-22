@@ -28,6 +28,7 @@ return packer.startup(function(use)
     use ("ap/vim-css-color")
     use ("ryanoasis/vim-devicons")
     use ("rafi/awesome-vim-colorschemes")
+    use "rebelot/kanagawa.nvim"
     use ("tpope/vim-surround")
     use ("vim-scripts/ReplaceWithRegister")
     use ("nvim-lualine/lualine.nvim")
@@ -55,6 +56,17 @@ return packer.startup(function(use)
     use ("neovim/nvim-lspconfig") 
     use ("hrsh7th/cmp-nvim-lsp")
     use ("onsails/lspkind.nvim")
+
+    -- Treesitter
+    use ({
+        "nvim-treesitter/nvim-treesitter",
+        run = function ()
+            require("nvim-treesitter.install").update({ with_sync = true})
+        end,
+    })
+
+    -- Auto Pairs
+    use ("windwp/nvim-autopairs")
 
 	if packer_bootstrap then
 		require("packer").sync()
