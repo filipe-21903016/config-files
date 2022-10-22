@@ -1,20 +1,41 @@
-"===================== GENERAL =============================
+" ===================== GENERAL =============================
+" Line numbers
 :set number
 :set relativenumber
+
+" General settings
 :set hidden
 :set noerrorbells
-:set tabstop=4 softtabstop=4
+
+"Indentation
+:set tabstop=4 
+:set softtabstop=4
 :set shiftwidth=4
+:set autoindent
 :set expandtab
-:set smartindent
+
+" Line Wraping
 :set nowrap
-:set mouse=a
-:set noswapfile
-:set nobackup
+
+" Search settings
+:set ignorecase
+:set smartcase
 :set incsearch
+
+" Cursor line
+:set cursorline
+:set mouse=a
 :set scrolloff=8
+
+" Split Options
 :set splitright
 :set splitbelow
+
+" Clipboard
+:set clipboard=unnamedplus
+
+" Set mapleader
+let mapleader = " "
 
 " ===================== PLUGINS =============================
 call plug#begin()
@@ -60,10 +81,28 @@ Plug 'p00f/nvim-ts-rainbow'
 call plug#end()
 
 " ===================== CONFIGURATIONS =============================
+inoremap jk <Esc>
+
+" Lazy moving
+nnoremap <Leader>j :m .+1<CR>==
+nnoremap <Leader>k :m .-2<CR>==
+
+" Show hidden files on NERDTree
+let NERDTreeShowHidden=1
 
 " Remap NERDTree Toggle
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-f> :NERDTreeToggle<CR>
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Bind TagbarToggle to F8
 nnoremap <F8> :TagbarToggle<CR>
@@ -73,28 +112,41 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-q> <C-w>q
 
-" Resize splits
+"Resize splits
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-" Bind jk to exit insert mode 
-inoremap jk <ESC>
+" Tab Navigation
+nnoremap <Leader>q :tabclose<CR>
+nnoremap <Leader>l :tabnext<CR>
+nnoremap <Leader>h :tabprev<CR>
 
-" Set space as mapleader
-let mapleader = " "
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
-" space+o to insert empty line below
-" space+O to inser empty line above
-nnoremap <Leader>o o<Esc>0"_D
-nnoremap <Leader>O O<Esc>0"_D
+" Always open files in new tab
+" autocmd VimEnter * tab all
+" autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
 
 :set completeopt-=preview " For No Previews
 
 " Set colorscheme
-:colorscheme deus
+" :colorscheme alduin 
+" :colorscheme deus 
+:colorscheme gruvbox 
 
 " Air-line
 let g:airline_theme="deus"
