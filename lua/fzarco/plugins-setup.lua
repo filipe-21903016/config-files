@@ -34,6 +34,9 @@ return packer.startup(function(use)
     use ("nvim-lualine/lualine.nvim")
     use "nvim-lua/plenary.nvim"
 
+    -- Git Integration
+    use ("lewis6991/gitsigns.nvim")
+
     -- Telescope
     use ({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use ({"nvim-telescope/telescope.nvim", branch = "0.1.x"})

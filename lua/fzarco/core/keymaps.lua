@@ -21,6 +21,6 @@ keymap.set("n", "<Leader>k", "<cmd>m .-2<CR>==")
 -- NERDTree Keymaps
 keymap.set("n", "<C-f>", "<cmd>NERDTreeToggle<CR>")
 
-
 -- Telescope Keymaps
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
