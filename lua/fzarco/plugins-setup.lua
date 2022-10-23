@@ -23,8 +23,7 @@ end
 
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim")
-    use ("tpope/vim-commentary")	
-    use ("preservim/nerdtree")
+    use ("tpope/vim-commentary")
     use ("ap/vim-css-color")
     use ("ryanoasis/vim-devicons")
     use ("rafi/awesome-vim-colorschemes")
@@ -33,6 +32,14 @@ return packer.startup(function(use)
     use ("vim-scripts/ReplaceWithRegister")
     use ("nvim-lualine/lualine.nvim")
     use "nvim-lua/plenary.nvim"
+
+    -- Nvim-tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
 
     -- Git Integration
     use ("lewis6991/gitsigns.nvim")
@@ -56,9 +63,12 @@ return packer.startup(function(use)
     use ("williamboman/mason-lspconfig.nvim")
 
     -- Configuring LSP servers
-    use ("neovim/nvim-lspconfig") 
+    use ("neovim/nvim-lspconfig")
     use ("hrsh7th/cmp-nvim-lsp")
     use ("onsails/lspkind.nvim")
+
+    -- ThePrimeagen's Harpoon
+    use("ThePrimeagen/harpoon")
 
     -- Treesitter
     use ({

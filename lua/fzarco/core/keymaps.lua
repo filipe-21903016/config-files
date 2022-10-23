@@ -19,7 +19,7 @@ keymap.set("n", "<Leader>j", "<cmd>m .+1<CR>==")
 keymap.set("n", "<Leader>k", "<cmd>m .-2<CR>==")
 
 -- NERDTree Keymaps
-keymap.set("n", "<C-f>", "<cmd>NERDTreeToggle<CR>")
+keymap.set("n", "<C-f>", "<cmd>NvimTreeToggle<CR>")
 
 -- Telescope Keymaps
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")

@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+-- General
+opt.swapfile = false
+opt.backup = false
+
 --  Line numbers
 opt.number = true
 opt.relativenumber = true
@@ -29,3 +33,8 @@ opt.splitbelow = true
 
 -- Clipboard
 opt.clipboard:append("unnamedplus")
+
+-- Column line
+opt.colorcolumn = "80"
+
+opt.termguicolors = true

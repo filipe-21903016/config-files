@@ -11,7 +11,8 @@ end
 telescope.setup({
     defaults = {
         prompt_prefix = "$ ",
-    } 
+    }
 })
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
+telescope.load_extension('harpoon')
