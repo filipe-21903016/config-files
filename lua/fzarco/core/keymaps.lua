@@ -9,10 +9,10 @@ keymap.set("i", "jk", "<Esc>")
 keymap.set("n", "x", '"_x')
 
 -- Split Navigation
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-l>", "<C-w>l")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
+-- keymap.set("n", "<leader>h", "<C-w>h")
+-- keymap.set("n", "<leader>l", "<C-w>l")
+-- keymap.set("n", "<leader>j", "<C-w>j")
+-- keymap.set("n", "<leader>k", "<C-w>k")
 
 -- Lazy moving
 keymap.set("n", "<Leader>j", "<cmd>m .+1<CR>==")
@@ -24,3 +24,12 @@ keymap.set("n", "<C-f>", "<cmd>NvimTreeToggle<CR>")
 -- Telescope Keymaps
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
+
+-- Harpoon Keymaps
+keymap.set("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<cr>')
+keymap.set("n", "<leader>h", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
+
+keymap.set("n", "<C-h>", '<cmd>lua require("harpoon.ui").nav_file(1)<cr>')
+keymap.set("n", "<C-j>", '<cmd>lua require("harpoon.ui").nav_file(2)<cr>')
+keymap.set("n", "<C-k>", '<cmd>lua require("harpoon.ui").nav_file(3)<cr>')
+keymap.set("n", "<C-l>", '<cmd>lua require("harpoon.ui").nav_file(4)<cr>')
