@@ -40,5 +40,5 @@ opt.splitbelow = true
 opt.clipboard:append("unnamedplus")
 
 -- Column line
+opt.signcolumn= "yes"
 opt.colorcolumn = "80"
-
