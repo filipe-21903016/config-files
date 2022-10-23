@@ -1,8 +1,13 @@
 local opt = vim.opt
 
 -- General
+opt.termguicolors = true
+
+-- Backup
 opt.swapfile = false
 opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 --  Line numbers
 opt.number = true
@@ -37,4 +42,3 @@ opt.clipboard:append("unnamedplus")
 -- Column line
 opt.colorcolumn = "80"
 
-opt.termguicolors = true
