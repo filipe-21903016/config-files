@@ -13,6 +13,7 @@ mason.setup()
 mason_lspconfig.setup({
     ensured_installed = {
         "lua-language-server",
+        "clangd",
         "pyright",
         "sqlls",
         "taplo",

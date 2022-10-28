@@ -27,7 +27,7 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 
 -- Harpoon Keymaps
 keymap.set("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<cr>')
-keymap.set("n", "<leader>h", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
+keymap.set("n", "<leader>e", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
 
 keymap.set("n", "<C-h>", '<cmd>lua require("harpoon.ui").nav_file(1)<cr>')
 keymap.set("n", "<C-j>", '<cmd>lua require("harpoon.ui").nav_file(2)<cr>')
