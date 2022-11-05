@@ -19,5 +19,7 @@ mason_lspconfig.setup({
         "taplo",
         "rust_analyzer",
         "yaml-language-server",
+        "javascript",
+        "typescript-language-server"
     },
 })

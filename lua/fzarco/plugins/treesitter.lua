@@ -13,6 +13,7 @@ treesitter.setup({
     ensured_installed = {
         "rust",
         "javascript",
+        "typescript",
         "vim",
         "lua",
         "gitignore",
