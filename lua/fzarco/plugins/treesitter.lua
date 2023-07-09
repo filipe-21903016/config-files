@@ -20,6 +20,7 @@ treesitter.setup({
         "bash",
         "python",
         "yaml",
+        "html",
         "markdown",
         "dockerfile",
     },

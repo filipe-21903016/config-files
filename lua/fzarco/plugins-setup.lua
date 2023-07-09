@@ -47,6 +47,7 @@ return packer.startup(function(use)
     -- Telescope
     use ({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use ({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
+    use ({"gbrlsnchs/telescope-lsp-handlers.nvim"})
 
     -- Autocompletion
     use ("hrsh7th/nvim-cmp")

@@ -17,7 +17,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, buf)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, buf)
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, buf)
+
+    -- Find implementations
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, buf)
+
+    -- Find references
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, buf)
+
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, buf)
     vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, buf)
     vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_prev, buf)
@@ -74,12 +80,32 @@ lspconfig["clangd"].setup({
     on_attach = on_attach
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["eslint"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
 
+-- lspconfig["tsserver"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach
+-- })
+
 lspconfig["angularls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
+
+-- lspconfig["cssls"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach
+-- })
+
+-- lspconfig["html"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach
+-- })
+
+lspconfig["emmet_ls"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })

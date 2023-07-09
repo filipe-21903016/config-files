@@ -20,6 +20,7 @@ mason_lspconfig.setup({
         "rust_analyzer",
         "yaml-language-server",
         "javascript",
-        "typescript-language-server"
+        "typescript-language-server",
+        "css-lsp"
     },
 })
