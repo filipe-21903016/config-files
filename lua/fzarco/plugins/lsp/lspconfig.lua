@@ -19,10 +19,12 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, buf)
 
     -- Find implementations
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, buf)
+    -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, buf)
+    vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations, buf)
 
     -- Find references
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, buf)
+    -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, buf)
+    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, buf)
 
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, buf)
     vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, buf)
@@ -32,7 +34,7 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -85,25 +87,25 @@ lspconfig["eslint"].setup({
     on_attach = on_attach
 })
 
--- lspconfig["tsserver"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach
--- })
+lspconfig["tsserver"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
 lspconfig["angularls"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
 
--- lspconfig["cssls"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach
--- })
+lspconfig["cssls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
--- lspconfig["html"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach
--- })
+lspconfig["html"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
 lspconfig["emmet_ls"].setup({
     capabilities = capabilities,

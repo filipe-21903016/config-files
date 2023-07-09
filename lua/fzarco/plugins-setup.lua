@@ -27,6 +27,7 @@ return packer.startup(function(use)
     use ("ap/vim-css-color")
     use ("ryanoasis/vim-devicons")
     use ("rafi/awesome-vim-colorschemes")
+    use ("savq/melange-nvim")
     use "rebelot/kanagawa.nvim"
     use ("tpope/vim-surround")
     use ("vim-scripts/ReplaceWithRegister")
@@ -47,7 +48,6 @@ return packer.startup(function(use)
     -- Telescope
     use ({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use ({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
-    use ({"gbrlsnchs/telescope-lsp-handlers.nvim"})
 
     -- Autocompletion
     use ("hrsh7th/nvim-cmp")

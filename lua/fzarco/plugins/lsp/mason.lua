@@ -10,9 +10,9 @@ end
 
 mason.setup()
 
-mason_lspconfig.setup({
+mason_lspconfig.setup{
     ensured_installed = {
-        "lua-language-server",
+        "lua_ls",
         "clangd",
         "pyright",
         "sqlls",
@@ -23,4 +23,4 @@ mason_lspconfig.setup({
         "typescript-language-server",
         "css-lsp"
     },
-})
+}

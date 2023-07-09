@@ -22,7 +22,8 @@ keymap.set("n", "<Leader>k", "<cmd>m .-2<CR>==")
 keymap.set("n", "<C-f>", "<cmd>NvimTreeToggle<CR>")
 
 -- Telescope Keymaps
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+-- keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({layout_strategy = 'vertical'})<cr>")
+keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 

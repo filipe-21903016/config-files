@@ -8,22 +8,14 @@ if not actions_setup then
     return
 end
 
-telescope.load_extension('lsp_handlers')
 telescope.load_extension('fzf')
 telescope.load_extension('harpoon')
 
 telescope.setup({
     defaults = {
         prompt_prefix = "$ ",
+        layout_config = {
+            vertical = {width = 0.5}
+        },
     },
-    extensions = {
-        lsp_handlers = {
-            code_action = {
-				telescope = require('telescope.themes').get_dropdown({}),
-			},
-        }
-    }
 })
-
-
-
